@@ -17,12 +17,14 @@ class Store extends Model
         'name',
         'domain',
         'metadata',
+        'gdpr_consented_at',
     ];
 
     protected function casts(): array
     {
         return [
             'metadata' => 'array',
+            'gdpr_consented_at' => 'datetime',
         ];
     }
 

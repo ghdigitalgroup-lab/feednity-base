@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Middleware\SetTenant;
+use Illuminate\Session\Middleware\StartSession;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -11,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->web(append: [StartSession::class, SetTenant::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
