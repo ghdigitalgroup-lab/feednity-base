@@ -19,6 +19,18 @@
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
+                <!-- Theme Toggle -->
+                <button
+                    @click="$root.theme = $root.theme === 'dark' ? 'light' : 'dark'; document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', $root.theme)"
+                    class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                    <svg x-cloak x-show="$root.theme === 'dark'" class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8-9h1M3 12H2m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m0 11.314.707-.707M17.657 6.343l.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg x-cloak x-show="$root.theme === 'light'" class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                    </svg>
+                </button>
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
