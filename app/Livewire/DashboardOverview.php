@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Livewire;
+
+use Livewire\Component;
+
+class DashboardOverview extends Component
+{
+    public function render()
+    {
+        return view('livewire.dashboard-overview')
+            ->layout('layouts.dashboard', ['title' => 'Dashboard Overview']);
+    }
+}
