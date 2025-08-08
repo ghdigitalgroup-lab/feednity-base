@@ -40,4 +40,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'magento' => [
+        'client_id' => env('MAGENTO_CLIENT_ID'),
+        'client_secret' => env('MAGENTO_CLIENT_SECRET'),
+        'oauth_url' => env('MAGENTO_OAUTH_URL'),
+    ],
+
 ];
